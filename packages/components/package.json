@@ -1,0 +1,12 @@
+{
+  "name": "components",
+  "version": "0.0.1",
+  "private": true,
+  "peerDependencies": {
+    "react": "*",
+    "react-native": "*"
+  },
+  "dependencies": {
+    "style-dictionary": "^3.7.1"
+  }
+}

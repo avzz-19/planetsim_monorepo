@@ -1,0 +1,37 @@
+{
+  "name": "web-cra",
+  "version": "0.0.1",
+  "private": true,
+  "dependencies": {
+    "react": "18.2.0",
+    "react-art": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-native-web": "0.18.9",
+    "react-native-vector-icons": "^9.2.0",
+    "react-scripts": "5.0.1"
+  },
+  "scripts": {
+    "start": "react-app-rewired start",
+    "build": "react-app-rewired build",
+    "test": "react-app-rewired test",
+    "eject": "react-app-rewired eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ],
+  "devDependencies": {
+    "babel-plugin-react-native-web": "0.18.9",
+    "react-app-rewired": "2.2.1",
+    "customize-cra": "^1.0.0",
+    "core": "0.0.1"
+  },
+  "jest": {
+    "preset": "react-native-web"
+  }
+}
