@@ -11,6 +11,7 @@ function Rootnavigation() {
       initialRouteName='Home'
       screenOptions={{ headerShown: false }}
     >
+      {/* <Stack.Screen name='Home' component={Home} /> */}
       <Stack.Screen name='Home'>
         {(screenProps) => <Home screenProps={{ ...screenProps }} />}
       </Stack.Screen>
