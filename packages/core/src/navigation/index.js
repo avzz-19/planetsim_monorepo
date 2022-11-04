@@ -7,18 +7,36 @@ import Water from '../screens/water'
 function Rootnavigation() {
   const Stack = createStackNavigator()
   return (
-    <Stack.Navigator
-      initialRouteName='Home'
-      screenOptions={{ headerShown: false }}
-    >
+    <Stack.Navigator initialRouteName='Home'>
       {/* <Stack.Screen name='Home' component={Home} /> */}
-      <Stack.Screen name='Home'>
+      <Stack.Screen
+        name='Home'
+        options={{
+          title: 'Home',
+          headerBackTitleVisible: false,
+          headerTitleAlign: 'center',
+        }}
+      >
         {(screenProps) => <Home screenProps={{ ...screenProps }} />}
       </Stack.Screen>
-      <Stack.Screen name='Water'>
+      <Stack.Screen
+        name='Water'
+        options={{
+          title: 'Water Distribution',
+          headerBackTitleVisible: false,
+          headerTitleAlign: 'center',
+        }}
+      >
         {(screenProps) => <Water screenProps={{ ...screenProps }} />}
       </Stack.Screen>
-      <Stack.Screen name='Tanker'>
+      <Stack.Screen
+        name='Tanker'
+        options={{
+          title: 'Tanker',
+          headerBackTitleVisible: false,
+          headerTitleAlign: 'center',
+        }}
+      >
         {(screenProps) => <Tanker screenProps={{ ...screenProps }} />}
       </Stack.Screen>
     </Stack.Navigator>

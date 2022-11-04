@@ -1,24 +1,24 @@
 import React from 'react'
-import { SafeAreaView, Platform } from 'react-native'
+import { Platform } from 'react-native'
 import { NavigationContainer } from '@react-navigation/native'
+import { SafeAreaProvider } from 'react-native-safe-area-context'
 import AppNavigator from './navigation'
 
 export function App() {
   return (
-    <>
-      <SafeAreaView>
-        {Platform.OS === 'web' ? (
-          <style type='text/css'>{`
+    <SafeAreaProvider>
+      {Platform.OS === 'web' ? (
+        <style type='text/css'>{`
         @font-face {
           font-family: 'MaterialCommunityIcons';
           src: url(${require('react-native-vector-icons/Fonts/MaterialCommunityIcons.ttf')}) format('truetype');
         }
       `}</style>
-        ) : null}
-      </SafeAreaView>
+      ) : null}
+
       <NavigationContainer>
         <AppNavigator />
       </NavigationContainer>
-    </>
+    </SafeAreaProvider>
   )
 }

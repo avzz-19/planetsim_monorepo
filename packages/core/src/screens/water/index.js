@@ -1,12 +1,19 @@
-import { View, Text } from 'react-native'
 import React from 'react'
+import { useWindowDimensions, View } from 'react-native'
+import { Breakpoints } from '../../../utils/screenLayout'
+import DesktopView from './DesktopView'
+import MobileView from './MobileView'
 
-function Water() {
+function Water(props) {
+  const windowWidth = useWindowDimensions().width
   return (
     <View>
-      <Text>Water</Text>
+      {windowWidth <= Breakpoints.sm ? (
+        <MobileView {...props} />
+      ) : (
+        <DesktopView {...props} />
+      )}
     </View>
   )
 }
-
 export default Water
