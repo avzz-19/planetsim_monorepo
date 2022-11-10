@@ -8,6 +8,8 @@ import { ugtCardData as ugt, Mode } from '../../data/ugtCardData'
 import { ohtCardData as oht } from '../../data/ohtCardData'
 import PumpButton from '../../components/common/PumpButton'
 import BottomBar from '../../components/BottomBar'
+import TowerCard from '../../components/TowerCard'
+import ColorCoding from '../../components/ColorCoding'
 
 function DesktopView() {
   const states = ["UGT's", "OHT's", 'Towers']
@@ -110,7 +112,11 @@ function DesktopView() {
         )}
         {active === 'Towers' && (
           <View>
-            <Text style={styles.heading}>Towers</Text>
+            <View style={styles.row}>
+              <Text style={styles.heading}>Towers</Text>
+              <ColorCoding />
+            </View>
+            <TowerCard />
             <BottomBar />
           </View>
         )}

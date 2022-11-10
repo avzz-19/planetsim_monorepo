@@ -6,6 +6,7 @@ import {
   useWindowDimensions,
 } from 'react-native'
 import React from 'react'
+import Svg, { Path } from 'react-native-svg'
 import { Breakpoints, colors } from '../../utils/screenLayout'
 import Sensor from '../assets/Sensor.png'
 import ToggleSwitch from './common/ToggleSwitch'
@@ -34,7 +35,26 @@ function OhtCard({
   return (
     <View style={styles.card(width, cardWidth)}>
       <View style={styles.wrapper}>
-        <View style={styles.leftSection(waterType, percentage)} />
+        {/* <View style={styles.leftSection(waterType, percentage)} /> */}
+        <Svg
+          width='100%'
+          height={`${percentage}%`}
+          style={{
+            position: 'absolute',
+            bottom: 0,
+            right: 0,
+            left: 0,
+            zIndex: -100000,
+            flex: 1,
+          }}
+        >
+          <Path
+            fill-rule='evenodd'
+            clip-rule='evenodd'
+            fill={WaterColor(waterType)}
+            d='M0 1.75342C0 1.75342 45.325 -1.75342 77.867 1.75342C113.039 5.54372 149.575 9.79821 174.132 9.79821C234.458 9.79821 259 1.75342 259 1.75342V128H0V1.75342Z'
+          />
+        </Svg>
         <View style={styles.containerText}>
           <View>
             <Text style={styles.percentage}>{percentage}%</Text>
@@ -110,8 +130,6 @@ const styles = StyleSheet.create({
     padding: '1%',
   }),
   wrapper: {
-    display: 'flex',
-    flex: 0.6,
     width: '30%',
     marginLeft: 10,
     marginRight: 10,

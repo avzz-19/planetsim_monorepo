@@ -4,8 +4,10 @@ import {
   Text,
   Image,
   useWindowDimensions,
+  Platform,
 } from 'react-native'
 import React from 'react'
+import Svg, { Path } from 'react-native-svg'
 import { Breakpoints, colors } from '../../utils/screenLayout'
 import Sensor from '../assets/Sensor.png'
 import ToggleSwitch from './common/ToggleSwitch'
@@ -27,7 +29,6 @@ function UgtCard({
   const cardWidth = useWindowDimensions().width
   return (
     <View style={styles.wrapper(cardWidth)}>
-      <View style={styles.card(waterType, percentage)} />
       <View style={styles.row}>
         <View style={styles.v1}>
           <Text style={styles.title}>{title}</Text>
@@ -41,6 +42,22 @@ function UgtCard({
           />
         </View>
       </View>
+      <Svg
+        height={`${percentage}%`}
+        width={Platform.OS === 'web' ? '100%' : '90%'}
+        style={{
+          position: 'absolute',
+          bottom: 60,
+          zIndex: -1000,
+        }}
+      >
+        <Path
+          fill-rule='evenodd'
+          clip-rule='evenodd'
+          d='M0 3.9589C0 3.9589 84.525 -3.9589 145.212 3.9589C210.803 12.5167 278.938 22.1225 324.733 22.1225C437.232 22.1225 483 3.9589 483 3.9589V289H0V3.9589Z'
+          fill={WaterColor(waterType)}
+        />
+      </Svg>
       <View style={styles.row}>
         <View style={styles.percent}>
           <Text style={styles.percentage}>{percentage}%</Text>
@@ -89,19 +106,16 @@ export default UgtCard
 const styles = StyleSheet.create({
   wrapper: (cardWidth) => ({
     height: 306,
-    width: cardWidth >= Breakpoints.sm ? '40%' : '90%',
+    minWidth: cardWidth >= Breakpoints.sm ? '37%' : '90%',
     backgroundColor: '#EEEEEE',
     alignSelf: 'center',
     paddingTop: 16,
   }),
-  card: (waterType, percentage) => ({
-    height: `${percentage}%`,
+  card: {
     width: '100%',
-    backgroundColor: WaterColor(waterType),
     position: 'absolute',
-    borderRadius: 10,
-    bottom: 45,
-  }),
+    bottom: 0,
+  },
   percentCheck: (percentage) => ({
     fontSize: 16,
     color: percentage <= 25 ? colors.red : colors.black,
@@ -150,11 +164,9 @@ const styles = StyleSheet.create({
   },
   end: {
     padding: 20,
-    borderTopWidth: 1,
-    borderTopColor: 'white',
     backgroundColor: 'white',
     height: 60,
-    width: '100%',
+    width: Platform.OS === 'web' ? '100%' : '90%',
     alignItems: 'flex-end',
     position: 'absolute',
     bottom: 0,

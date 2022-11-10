@@ -1,16 +1,16 @@
 import { colors } from '../../utils/screenLayout'
 
 export function WaterColor(type) {
-  if (type === 'Drinking Water') {
+  if (type === 'Drinking Water' || type === 'drinking') {
     return colors.drinkingWater
   }
-  if (type === 'Soft filtered water') {
+  if (type === 'Soft filtered water' || type === 'softTreated') {
     return colors.softFilteredWater
   }
-  if (type === 'Borewell water') {
+  if (type === 'Borewell water' || type === 'borewell') {
     return colors.borewellWater
   }
-  if (type === 'Recycled water') {
+  if (type === 'Recycled water' || type === 'recycled') {
     return colors.recycledWater
   }
   return colors.drinkingWater
