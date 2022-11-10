@@ -11,13 +11,13 @@ import BottomBar from '../../components/BottomBar'
 import TowerCard from '../../components/TowerCard'
 import ColorCoding from '../../components/ColorCoding'
 
-function DesktopView() {
+function DesktopView(props) {
   const states = ["UGT's", "OHT's", 'Towers']
   const [active, setActive] = useState("UGT's")
   const [isEnabled, setIsEnabled] = useState(false)
   return (
     <>
-      <DesktopSideBar />
+      <DesktopSideBar {...props} />
       <View style={{ marginLeft: '20%' }}>
         <View style={[styles.row, styles.container]}>
           <View style={styles.row}>
@@ -47,16 +47,7 @@ function DesktopView() {
         {active === "UGT's" && (
           <>
             <Text style={styles.heading}>Underground Tanks (UGT&apos;s)</Text>
-            <View
-              style={{
-                marginLeft: 20,
-                flex: 1,
-                flexWrap: 'wrap',
-                flexDirection: 'row',
-                gap: 40,
-                marginBottom: 20,
-              }}
-            >
+            <View style={styles.ugt}>
               {ugt.map((i) => (
                 <UgtCard
                   title={i.title}
@@ -70,23 +61,15 @@ function DesktopView() {
                 />
               ))}
             </View>
-            <BottomBar />
+            <View style={{ marginTop: 68, marginLeft: '-25%' }}>
+              <BottomBar />
+            </View>
           </>
         )}
         {active === "OHT's" && (
           <>
             <Text style={styles.heading}>Overhead Tanks (OHT&apos;s)</Text>
-            <View
-              style={{
-                marginBottom: 20,
-                display: 'flex',
-                flexWrap: 'wrap',
-                flex: 1,
-                flexDirection: 'row',
-                gap: 20,
-                marginLeft: 50,
-              }}
-            >
+            <View style={styles.oht}>
               {oht.map((i) => (
                 <OhtCard
                   title={i.title}
@@ -117,7 +100,9 @@ function DesktopView() {
               <ColorCoding />
             </View>
             <TowerCard />
-            <BottomBar />
+            <View style={{ marginTop: 68, marginLeft: '-25%' }}>
+              <BottomBar />
+            </View>
           </View>
         )}
       </View>
@@ -139,6 +124,23 @@ const styles = StyleSheet.create({
   },
   blue: {
     color: colors.primary,
+  },
+  oht: {
+    marginBottom: 20,
+    display: 'flex',
+    flexWrap: 'wrap',
+    flex: 1,
+    flexDirection: 'row',
+    gap: 20,
+    marginLeft: 50,
+  },
+  ugt: {
+    marginLeft: 20,
+    flex: 1,
+    flexWrap: 'wrap',
+    flexDirection: 'row',
+    gap: 40,
+    marginBottom: 20,
   },
   tabs: {
     paddingHorizontal: 37,

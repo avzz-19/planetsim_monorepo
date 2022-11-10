@@ -42,8 +42,8 @@ function TowerCard() {
                           style={{ alignSelf: 'flex-end' }}
                         >
                           <Path
-                            fill-rule='evenodd'
-                            clip-rule='evenodd'
+                            fillRule='evenodd'
+                            clipRule='evenodd'
                             d='M0 1.56164C0 1.56164 8.75 -1.56164 15.0322 1.56164C21.8223 4.93737 28.8755 8.72653 33.6162 8.72653C45.2621 8.72653 50 1.56164 50 1.56164V114H0V1.56164Z'
                             fill={WaterColor(e)}
                           />

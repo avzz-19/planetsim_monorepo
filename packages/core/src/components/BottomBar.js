@@ -32,6 +32,8 @@ const styles = StyleSheet.create({
     justifyContent: 'space-around',
     alignItems: 'center',
     padding: '1%',
+    position: 'fixed',
+    bottom: 0,
   },
   bottomContainerElement: {
     backgroundColor: colors.white,

@@ -52,8 +52,8 @@ function UgtCard({
         }}
       >
         <Path
-          fill-rule='evenodd'
-          clip-rule='evenodd'
+          fillRule='evenodd'
+          clipRule='evenodd'
           d='M0 3.9589C0 3.9589 84.525 -3.9589 145.212 3.9589C210.803 12.5167 278.938 22.1225 324.733 22.1225C437.232 22.1225 483 3.9589 483 3.9589V289H0V3.9589Z'
           fill={WaterColor(waterType)}
         />

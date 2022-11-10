@@ -59,7 +59,9 @@ function MobileView() {
               />
             </View>
           ))}
-          <BottomBar />
+          <View style={{ marginTop: 88 }}>
+            <BottomBar />
+          </View>
         </>
       )}
       {active === "OHT's" && (
@@ -96,7 +98,9 @@ function MobileView() {
             <ColorCoding />
           </View>
           <TowerCard />
-          <BottomBar />
+          <View style={{ marginTop: 88 }}>
+            <BottomBar />
+          </View>
         </View>
       )}
     </Body>

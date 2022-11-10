@@ -4,8 +4,9 @@ import { useNavigation } from '@react-navigation/native'
 import { Text } from 'react-native-paper'
 import Card from '../../components/Card'
 
-function Home() {
+function Home(props) {
   const Navigation = useNavigation()
+
   return (
     <View style={styles.main}>
       <Text style={styles.header}>Planet Sim Solutions</Text>
@@ -13,6 +14,7 @@ function Home() {
         <TouchableOpacity
           onPress={() => {
             Navigation.navigate('Water')
+            props.setActiveTab('water')
           }}
         >
           <Card text='Water' />
@@ -21,6 +23,7 @@ function Home() {
         <TouchableOpacity
           onPress={() => {
             Navigation.navigate('Tanker')
+            props.setActiveTab('tanker')
           }}
         >
           <Card text='Tanker' />

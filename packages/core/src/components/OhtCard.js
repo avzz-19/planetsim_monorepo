@@ -27,8 +27,8 @@ function OhtCard({
   const [isEnabled, setIsEnabled] = React.useState(false)
   const cardWidth = useWindowDimensions().width
   function width(w) {
-    if (w <= Breakpoints.xs) return '90%'
-    if (w <= Breakpoints.sm && w <= Breakpoints.md) return '90%'
+    if (w >= Breakpoints.xs && w <= Breakpoints.sm) return '90%'
+    if (w >= Breakpoints.sm && w <= Breakpoints.md) return '60%'
     if (w >= Breakpoints.md && w <= Breakpoints.lg) return '50%'
     if (w >= Breakpoints.lg) return '40%'
   }
@@ -49,8 +49,8 @@ function OhtCard({
           }}
         >
           <Path
-            fill-rule='evenodd'
-            clip-rule='evenodd'
+            fillRule='evenodd'
+            clipRule='evenodd'
             fill={WaterColor(waterType)}
             d='M0 1.75342C0 1.75342 45.325 -1.75342 77.867 1.75342C113.039 5.54372 149.575 9.79821 174.132 9.79821C234.458 9.79821 259 1.75342 259 1.75342V128H0V1.75342Z'
           />

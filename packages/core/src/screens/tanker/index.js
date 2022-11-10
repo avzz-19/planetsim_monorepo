@@ -1,10 +1,18 @@
-import { View, Text } from 'react-native'
+import { View, useWindowDimensions } from 'react-native'
 import React from 'react'
+import MobileView from './MobileView'
+import DesktopView from './DesktopView'
+import { Breakpoints } from '../../../utils/screenLayout'
 
-function Tanker() {
+function Tanker(props) {
+  const windowWidth = useWindowDimensions().width
   return (
     <View>
-      <Text>Tanker</Text>
+      {windowWidth <= Breakpoints.sm ? (
+        <MobileView {...props} />
+      ) : (
+        <DesktopView {...props} />
+      )}
     </View>
   )
 }

@@ -1,10 +1,11 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { createStackNavigator } from '@react-navigation/stack'
 import Home from '../screens/home'
 import Tanker from '../screens/tanker'
 import Water from '../screens/water'
 
 function Rootnavigation() {
+  const [activeTab, setActiveTab] = useState('')
   const Stack = createStackNavigator()
   return (
     <Stack.Navigator initialRouteName='Home'>
@@ -17,7 +18,13 @@ function Rootnavigation() {
           headerTitleAlign: 'center',
         }}
       >
-        {(screenProps) => <Home screenProps={{ ...screenProps }} />}
+        {(screenProps) => (
+          <Home
+            screenProps={{ ...screenProps }}
+            activeTab={activeTab}
+            setActiveTab={setActiveTab}
+          />
+        )}
       </Stack.Screen>
       <Stack.Screen
         name='Water'
@@ -27,7 +34,13 @@ function Rootnavigation() {
           headerTitleAlign: 'center',
         }}
       >
-        {(screenProps) => <Water screenProps={{ ...screenProps }} />}
+        {(screenProps) => (
+          <Water
+            screenProps={{ ...screenProps }}
+            activeTab={activeTab}
+            setActiveTab={setActiveTab}
+          />
+        )}
       </Stack.Screen>
       <Stack.Screen
         name='Tanker'
@@ -37,7 +50,13 @@ function Rootnavigation() {
           headerTitleAlign: 'center',
         }}
       >
-        {(screenProps) => <Tanker screenProps={{ ...screenProps }} />}
+        {(screenProps) => (
+          <Tanker
+            screenProps={{ ...screenProps }}
+            activeTab={activeTab}
+            setActiveTab={setActiveTab}
+          />
+        )}
       </Stack.Screen>
     </Stack.Navigator>
   )
