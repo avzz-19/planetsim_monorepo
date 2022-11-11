@@ -7,10 +7,10 @@ import {
 } from 'react-native'
 import React from 'react'
 import { Surface } from 'react-native-paper'
-import { Breakpoints, colors } from '../../utils/screenLayout'
-import Tanker from '../assets/TankerWhite.png'
-import Agency from '../assets/Agency.png'
-import Plus from '../assets/Plus.png'
+import { Breakpoints, colors } from '../../../utils/screenLayout'
+import Tanker from '../../assets/TankerWhite.png'
+import Agency from '../../assets/Agency.png'
+import Plus from '../../assets/Plus.png'
 
 function RecordTankerArrival({ AddAgency, RecordTanker }) {
   return (

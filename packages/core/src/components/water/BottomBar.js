@@ -1,7 +1,7 @@
 import { StyleSheet, Text, View, TouchableOpacity, Image } from 'react-native'
 import React from 'react'
-import Tanker from '../assets/Taker.png'
-import { colors } from '../../utils/screenLayout'
+import Tanker from '../../assets/Taker.png'
+import { colors } from '../../../utils/screenLayout'
 
 function BottomBar() {
   return (

@@ -8,12 +8,11 @@ import {
 } from 'react-native'
 import React from 'react'
 import Svg, { Path } from 'react-native-svg'
-import { Breakpoints, colors } from '../../utils/screenLayout'
-import Sensor from '../assets/Sensor.png'
-import ToggleSwitch from './common/ToggleSwitch'
-import { WaterColor } from './WaterColor'
-import { PercentageCheck } from './PercentCalculate'
-// import { Switch } from 'react-native'
+import { Breakpoints, colors } from '../../../utils/screenLayout'
+import Sensor from '../../assets/Sensor.png'
+import ToggleSwitch from '../common/ToggleSwitch'
+import { WaterColor } from '../../functions/WaterColor'
+import { PercentageCheck } from '../../functions/PercentCalculate'
 
 function UgtCard({
   title,

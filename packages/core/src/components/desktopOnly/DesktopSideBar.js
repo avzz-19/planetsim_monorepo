@@ -1,8 +1,8 @@
 import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import React, { useEffect } from 'react'
 import { useNavigation } from '@react-navigation/native'
-import Drop from '../assets/Drop.svg'
-import { colors } from '../../utils/screenLayout'
+import Drop from '../../assets/Drop.svg'
+import { colors } from '../../../utils/screenLayout'
 
 function DesktopSideBar(props) {
   const { activeTab: active, setActiveTab: setActive } = props

@@ -7,15 +7,15 @@ import {
 } from 'react-native'
 import React, { useState } from 'react'
 import { colors } from '../../../utils/screenLayout'
-import DesktopSideBar from '../../components/DesktopSideBar'
-import UgtCard from '../../components/UgtCard'
-import OhtCard from '../../components/OhtCard'
+import DesktopSideBar from '../../components/desktopOnly/DesktopSideBar'
+import UgtCard from '../../components/water/UgtCard'
+import OhtCard from '../../components/water/OhtCard'
 import { ugtCardData as ugt, Mode } from '../../data/ugtCardData'
 import { ohtCardData as oht } from '../../data/ohtCardData'
 import PumpButton from '../../components/common/PumpButton'
-import BottomBar from '../../components/BottomBar'
-import TowerCard from '../../components/TowerCard'
-import ColorCoding from '../../components/ColorCoding'
+import BottomBar from '../../components/water/BottomBar'
+import TowerCard from '../../components/water/TowerCard'
+import ColorCoding from '../../components/water/ColorCoding'
 
 function DesktopView(props) {
   const states = ["UGT's", "OHT's", 'Towers']

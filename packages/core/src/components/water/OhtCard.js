@@ -7,12 +7,11 @@ import {
 } from 'react-native'
 import React from 'react'
 import Svg, { Path } from 'react-native-svg'
-import { Breakpoints, colors } from '../../utils/screenLayout'
-import Sensor from '../assets/Sensor.png'
-import ToggleSwitch from './common/ToggleSwitch'
-import { PercentageCheck } from './PercentCalculate'
-import { WaterColor } from './WaterColor'
-// import { Switch } from 'react-native'
+import { Breakpoints, colors } from '../../../utils/screenLayout'
+import Sensor from '../../assets/Sensor.png'
+import ToggleSwitch from '../common/ToggleSwitch'
+import { PercentageCheck } from '../../functions/PercentCalculate'
+import { WaterColor } from '../../functions/WaterColor'
 
 function OhtCard({
   title,

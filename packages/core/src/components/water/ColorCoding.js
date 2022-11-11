@@ -1,6 +1,6 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
-import { colors } from '../../utils/screenLayout'
+import { colors } from '../../../utils/screenLayout'
 
 function ColorCoding() {
   return (

@@ -2,7 +2,7 @@ import { StyleSheet, TouchableOpacity, View } from 'react-native'
 import React from 'react'
 import { useNavigation } from '@react-navigation/native'
 import { Text } from 'react-native-paper'
-import Card from '../../components/Card'
+import Card from '../../components/common/Card'
 
 function Home(props) {
   const Navigation = useNavigation()

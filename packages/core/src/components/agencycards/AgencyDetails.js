@@ -1,4 +1,10 @@
-import { StyleSheet, Text, TouchableOpacity, View } from 'react-native'
+import {
+  Platform,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+} from 'react-native'
 import React from 'react'
 import { Surface } from 'react-native-paper'
 import { colors } from '../../../utils/screenLayout'
@@ -41,7 +47,7 @@ const styles = StyleSheet.create({
     borderRadius: 4,
     padding: 10,
     marginBottom: 10,
-    width: '90%',
+    width: Platform.OS === 'ios' ? '100%' : '90%',
     alignSelf: 'center',
     justifyContent: 'center',
     backgroundColor: 'white',

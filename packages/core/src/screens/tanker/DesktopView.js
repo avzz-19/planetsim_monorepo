@@ -1,8 +1,8 @@
 import { Pressable, StyleSheet, Text, View } from 'react-native'
 import React, { useState } from 'react'
-import RecordTankerArrival from '../../components/RecordTankerArrival'
+import RecordTankerArrival from '../../components/tanker/RecordTankerArrival'
 import { Body, colors } from '../../../utils/screenLayout'
-import DesktopSideBar from '../../components/DesktopSideBar'
+import DesktopSideBar from '../../components/desktopOnly/DesktopSideBar'
 import AgencyDetailsDesktop from '../../components/agencycards/AgencyDetailsDesktop'
 import { agencyData } from '../../data/agencyData'
 

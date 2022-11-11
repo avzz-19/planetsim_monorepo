@@ -1,9 +1,9 @@
 import { StyleSheet, Text, useWindowDimensions, View } from 'react-native'
 import React from 'react'
 import Svg, { Path } from 'react-native-svg'
-import { towerData } from '../data/towerCardData'
-import { WaterColor } from './WaterColor'
-import { Breakpoints, colors } from '../../utils/screenLayout'
+import { towerData } from '../../data/towerCardData'
+import { WaterColor } from '../../functions/WaterColor'
+import { Breakpoints, colors } from '../../../utils/screenLayout'
 
 function TowerCard() {
   const widthBar = useWindowDimensions().width
