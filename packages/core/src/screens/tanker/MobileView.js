@@ -1,8 +1,10 @@
 import { Pressable, StyleSheet, Text, View } from 'react-native'
 import React, { useState } from 'react'
 import RecordTankerArrival from '../../components/RecordTankerArrival'
-import { colors } from '../../../utils/screenLayout'
+import { Body, colors } from '../../../utils/screenLayout'
 import AddNewAgencyButton from '../../components/common/AddNewAgencyButton'
+import AgencyDetails from '../../components/agencycards/AgencyDetails'
+import { agencyData } from '../../data/agencyData'
 
 function MobileView() {
   const states = ['Tanker Logs', 'Agency Details']
@@ -27,11 +29,39 @@ function MobileView() {
       </View>
       {active === 'Tanker Logs' && (
         <View style={{ height: '100%' }}>
-          <RecordTankerArrival />
-          <View style={{ position: 'fixed', bottom: 3, alignSelf: 'center' }}>
-            <AddNewAgencyButton />
-          </View>
+          <RecordTankerArrival RecordTanker />
         </View>
+      )}
+      {active === 'Agency Details' && (
+        <>
+          <Body styleProps={{ marginBottom: 60 }}>
+            {agencyData.map((e) => (
+              <AgencyDetails
+                title={e.name}
+                address={e.address}
+                phone1={e.Phone1}
+                phone2={e.Phone2}
+              />
+            ))}
+          </Body>
+          <View
+            style={{
+              position: 'absolute',
+              bottom: 0,
+              backgroundColor: '#FFF',
+              width: '100%',
+              padding: 15,
+            }}
+          >
+            <View
+              style={{
+                alignSelf: 'center',
+              }}
+            >
+              <AddNewAgencyButton />
+            </View>
+          </View>
+        </>
       )}
     </View>
   )

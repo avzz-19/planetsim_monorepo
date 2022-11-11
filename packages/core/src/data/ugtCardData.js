@@ -37,4 +37,4 @@ export const ugtCardData = [
   },
 ]
 
-export const Mode = { auto: 'Auto', manual: 'Manual' }
+export const Mode = ['Auto', 'Manual']

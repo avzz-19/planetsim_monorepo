@@ -69,7 +69,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
   },
   wrapper: {
-    height: '100%',
+    height: '100vh',
     position: 'absolute',
     left: 0,
     width: '20%',

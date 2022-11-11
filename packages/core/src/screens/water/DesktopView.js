@@ -1,4 +1,10 @@
-import { Pressable, StyleSheet, Text, View } from 'react-native'
+import {
+  Pressable,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+} from 'react-native'
 import React, { useState } from 'react'
 import { colors } from '../../../utils/screenLayout'
 import DesktopSideBar from '../../components/DesktopSideBar'
@@ -15,6 +21,7 @@ function DesktopView(props) {
   const states = ["UGT's", "OHT's", 'Towers']
   const [active, setActive] = useState("UGT's")
   const [isEnabled, setIsEnabled] = useState(false)
+  const [mode, setMode] = useState(0)
   return (
     <>
       <DesktopSideBar {...props} />
@@ -22,10 +29,16 @@ function DesktopView(props) {
         <View style={[styles.row, styles.container]}>
           <View style={styles.row}>
             <Text>Mode: </Text>
-            <Text>{Mode.manual}</Text>
+            <Text>{Mode[mode]}</Text>
           </View>
           <View>
-            <Text style={styles.blue}>Change</Text>
+            <TouchableOpacity
+              onPress={() => {
+                setMode(mode === 0 ? 1 : 0)
+              }}
+            >
+              <Text style={styles.blue}>Change</Text>
+            </TouchableOpacity>
           </View>
         </View>
         <View style={[styles.tabContainer, { alignSelf: 'center' }]}>
@@ -57,7 +70,7 @@ function DesktopView(props) {
                   percentage={i.percentage}
                   towers={i.towers}
                   valveState={i.valveState}
-                  mode={Mode.manual}
+                  mode={Mode[mode]}
                 />
               ))}
             </View>
@@ -79,7 +92,7 @@ function DesktopView(props) {
                   percentage={i.percentage}
                   towers={i.towers}
                   valveState={i.valveState}
-                  mode={Mode.manual}
+                  mode={Mode[mode]}
                 />
               ))}
             </View>

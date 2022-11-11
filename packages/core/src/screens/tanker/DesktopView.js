@@ -1,8 +1,10 @@
 import { Pressable, StyleSheet, Text, View } from 'react-native'
 import React, { useState } from 'react'
 import RecordTankerArrival from '../../components/RecordTankerArrival'
-import { colors } from '../../../utils/screenLayout'
+import { Body, colors } from '../../../utils/screenLayout'
 import DesktopSideBar from '../../components/DesktopSideBar'
+import AgencyDetailsDesktop from '../../components/agencycards/AgencyDetailsDesktop'
+import { agencyData } from '../../data/agencyData'
 
 function DesktopView(props) {
   const states = ['Tanker Logs', 'Agency Details']
@@ -11,11 +13,20 @@ function DesktopView(props) {
     <View>
       <DesktopSideBar {...props} />
       <View style={{ marginLeft: '20%' }}>
-        <View style={[styles.tabContainer, { alignSelf: 'center' }]}>
+        <View
+          style={[
+            styles.tabContainer,
+            {
+              alignSelf: 'flex-start',
+              paddingLeft: '5%',
+              backgroundColor: '#FFF',
+              width: '100%',
+            },
+          ]}
+        >
           <View style={[styles.row]}>
             {states.map((i) => (
               <Pressable
-                style={styles.borderRight(i)}
                 onPress={() => {
                   setActive(i)
                 }}
@@ -28,9 +39,24 @@ function DesktopView(props) {
           </View>
         </View>
         {active === 'Tanker Logs' && (
-          <View style={{ width: '50%', alignSelf: 'center' }}>
-            <RecordTankerArrival />
+          <View style={{ width: '91.5%', alignSelf: 'center' }}>
+            <RecordTankerArrival RecordTanker />
           </View>
+        )}
+        {active === 'Agency Details' && (
+          <Body styleProps={{ marginBottom: 60 }}>
+            <View style={{ width: '91.5%', alignSelf: 'center' }}>
+              <RecordTankerArrival AddAgency />
+            </View>
+            {agencyData.map((e) => (
+              <AgencyDetailsDesktop
+                title={e.name}
+                address={e.address}
+                phone1={e.Phone1}
+                phone2={e.Phone2}
+              />
+            ))}
+          </Body>
         )}
       </View>
     </View>
@@ -49,20 +75,15 @@ const styles = StyleSheet.create({
     paddingVertical: 7,
   },
   tabContainer: {
-    borderRadius: 4,
-    borderColor: colors.primary,
-    borderWidth: 1,
-    borderStyle: 'solid',
-    marginVertical: 20,
+    marginBottom: 20,
+    paddingTop: 10,
   },
-  borderRight: (i) => ({
-    borderRightColor: colors.primary,
-    borderRightWidth: i === 'Agency Details' ? 0 : 1,
-  }),
   activeTab: {
+    borderColor: colors.primary,
+    borderBottomWidth: 1,
     paddingHorizontal: 37,
     paddingVertical: 7,
-    backgroundColor: colors.primary,
-    color: colors.white,
+    backgroundColor: colors.white,
+    color: colors.primary,
   },
 })

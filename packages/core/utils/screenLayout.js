@@ -20,6 +20,6 @@ export const colors = {
   recycledWater: '#C1E895',
 }
 
-export function Body({ children }) {
-  return <ScrollView>{children}</ScrollView>
+export function Body({ children, styleProps }) {
+  return <ScrollView style={{ ...styleProps }}>{children}</ScrollView>
 }
