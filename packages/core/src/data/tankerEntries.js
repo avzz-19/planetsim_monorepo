@@ -1,7 +1,7 @@
 export const tankerEntries = [
   {
     agency: 'Myrtie water suppliers',
-    tankName: 'UGT tank name lorem ipsum',
+    tankName: 'UGT tank name lorem',
     beforeFill: '10000 Ltrs.',
     afterFill: '20000 Ltrs.',
     estSupply: '10000 Ltrs.',
@@ -10,7 +10,7 @@ export const tankerEntries = [
   },
   {
     agency: 'Myrtie water suppliers',
-    tankName: 'UGT tank name lorem ipsum',
+    tankName: 'UGT tank name lorem',
     beforeFill: '10000 Ltrs.',
     afterFill: '20000 Ltrs.',
     estSupply: '10000 Ltrs.',
@@ -21,7 +21,18 @@ export const tankerEntries = [
   },
   {
     agency: 'Myrtie water suppliers',
-    tankName: 'UGT tank name lorem ipsum',
+    tankName: 'UGT tank name lore',
+    beforeFill: '10000 Ltrs.',
+    afterFill: '20000 Ltrs.',
+    estSupply: '10000 Ltrs.',
+    status: 'Delivered',
+    start: '10:00 am',
+    end: '10:30 am ',
+    date: '12 Jun',
+  },
+  {
+    agency: 'Myrtie water suppliers',
+    tankName: 'UGT tank name lorem',
     beforeFill: '10000 Ltrs.',
     afterFill: '20000 Ltrs.',
     estSupply: '10000 Ltrs.',

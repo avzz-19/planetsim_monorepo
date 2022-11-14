@@ -1,4 +1,5 @@
 import {
+  Image,
   Platform,
   Pressable,
   StyleSheet,
@@ -14,6 +15,8 @@ import AgencyDetails from '../../components/agencycards/AgencyDetails'
 import { agencyData } from '../../data/agencyData'
 import { tankerEntries } from '../../data/tankerEntries'
 import TankerLog from '../../components/tanker/TankerLog'
+import Placeholder from '../../assets/Placeholder.png'
+import AgencyPlaceholder from '../../assets/AgencyPlaceholder.png'
 
 function MobileView() {
   const states = ['Tanker Logs', 'Agency Details']
@@ -39,49 +42,90 @@ function MobileView() {
       {active === 'Tanker Logs' && (
         <View>
           <Body styleProps={{ marginBottom: Platform.OS === 'web' ? 0 : 250 }}>
-            <RecordTankerArrival RecordTanker />
             <View style={[styles.row, styles.top]}>
-              <Text>Today&apos;s tanker entry</Text>
+              <Text style={styles.heading}>Today&apos;s tanker entry</Text>
               <TouchableOpacity>
                 <Text style={styles.old}>View old entries</Text>
               </TouchableOpacity>
             </View>
-
-            {tankerEntries.map((e) => (
-              <TankerLog
-                agency={e.agency}
-                tankName={e.tankName}
-                beforeFill={e.beforeFill}
-                afterFill={e.afterFill}
-                estSupply={e.estSupply}
-                status={e.status}
-                start={e.start}
-                end={e.end}
-                date={e.date}
-              />
-            ))}
+            {tankerEntries.length !== 0 && (
+              <View style={{ width: '95%', alignSelf: 'center' }}>
+                <RecordTankerArrival RecordTanker />
+              </View>
+            )}
+            {tankerEntries.length !== 0 ? (
+              tankerEntries.map((e) => (
+                <TankerLog
+                  agency={e.agency}
+                  tankName={e.tankName}
+                  beforeFill={e.beforeFill}
+                  afterFill={e.afterFill}
+                  estSupply={e.estSupply}
+                  status={e.status}
+                  start={e.start}
+                  end={e.end}
+                  date={e.date}
+                />
+              ))
+            ) : (
+              <View style={{ alignItems: 'center' }}>
+                <Image
+                  source={Placeholder}
+                  style={{ height: 256, width: 253 }}
+                />
+                <Text style={{ margin: 20, fontSize: 24 }}>
+                  No entries today
+                </Text>
+                <View style={{ width: '90%', alignSelf: 'center' }}>
+                  <RecordTankerArrival RecordTanker />
+                </View>
+              </View>
+            )}
           </Body>
         </View>
       )}
       {active === 'Agency Details' && (
         <Body styleProps={{ marginBottom: Platform.OS === 'web' ? 0 : 150 }}>
-          {agencyData.map((e) => (
-            <AgencyDetails
-              title={e.name}
-              address={e.address}
-              phone1={e.Phone1}
-              phone2={e.Phone2}
-            />
-          ))}
-          <View style={styles.buttonBg}>
-            <View
-              style={{
-                alignSelf: 'center',
-              }}
-            >
-              <AddNewAgencyButton />
+          <Text
+            style={[styles.heading, { paddingLeft: '5%', paddingBottom: 10 }]}
+          >
+            List of Agencies
+          </Text>
+          {agencyData.length !== 0 ? (
+            agencyData.map((e) => (
+              <AgencyDetails
+                title={e.name}
+                address={e.address}
+                phone1={e.Phone1}
+                phone2={e.Phone2}
+              />
+            ))
+          ) : (
+            <View style={{ alignItems: 'center' }}>
+              <Image
+                source={AgencyPlaceholder}
+                style={{ height: 270, width: 281 }}
+              />
+              <Text style={{ margin: 20, fontSize: 18, marginTop: 30 }}>
+                List of agencies not available.{'\n'}Please add a new agency to
+                start ordering.
+              </Text>
+              <View style={{ width: '90%', alignSelf: 'center' }}>
+                <RecordTankerArrival AddAgency />
+              </View>
             </View>
-          </View>
+          )}
+          {agencyData.length !== 0 && (
+            <View style={styles.buttonBg}>
+              <View
+                style={{
+                  alignSelf: 'center',
+                }}
+              >
+                <AddNewAgencyButton />
+              </View>
+            </View>
+          )}
         </Body>
       )}
     </View>
@@ -133,5 +177,9 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     width: '90%',
     alignSelf: 'center',
+  },
+  heading: {
+    fontWeight: '500',
+    fontSize: 20,
   },
 })
