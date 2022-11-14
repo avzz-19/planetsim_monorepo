@@ -73,7 +73,7 @@ function MobileView() {
             </View>
           ))}
           <View style={{ marginTop: 88 }}>
-            <BottomBar />
+            <BottomBar tankerButton />
           </View>
         </>
       )}
@@ -112,7 +112,7 @@ function MobileView() {
           </View>
           <TowerCard />
           <View style={{ marginTop: 88 }}>
-            <BottomBar />
+            <BottomBar tankerButton />
           </View>
         </View>
       )}

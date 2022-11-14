@@ -1,23 +1,49 @@
 import { StyleSheet, Text, View, TouchableOpacity, Image } from 'react-native'
-import React from 'react'
+import React, { useState } from 'react'
 import Tanker from '../../assets/Taker.png'
 import { colors } from '../../../utils/screenLayout'
+import SetSchedule from './SetSchedule'
 
-function BottomBar() {
+function BottomBar({ tankerButton, scheduleButton }) {
+  const [modalVisible, setModalVisible] = useState(false)
+  const [prompt, setPrompt] = useState(false)
   return (
-    <View style={styles.bottomContainer}>
-      <TouchableOpacity
-        style={[
-          styles.bottomContainerElement,
-          { backgroundColor: '#F1F7F9', alignItems: 'center' },
-        ]}
-      >
-        <Image source={Tanker} style={{ height: 16.55, width: 30 }} />
-        <Text style={[styles.bottomElementText, { color: colors.primary }]}>
-          Call Tanker
-        </Text>
-      </TouchableOpacity>
-    </View>
+    <>
+      {tankerButton && (
+        <View style={styles.bottomContainer}>
+          <TouchableOpacity
+            style={[
+              styles.bottomContainerElement,
+              { backgroundColor: '#F1F7F9', alignItems: 'center' },
+            ]}
+          >
+            <Image source={Tanker} style={{ height: 16.55, width: 30 }} />
+            <Text style={styles.bottomElementText}>Call Tanker</Text>
+          </TouchableOpacity>
+        </View>
+      )}
+      {scheduleButton && (
+        <View style={styles.bottomContainer}>
+          <View>
+            <TouchableOpacity
+              style={styles.button}
+              onPress={() => {
+                setPrompt(true)
+                setModalVisible(true)
+              }}
+            >
+              <Text style={styles.bottomElementText}>Create new schedule</Text>
+            </TouchableOpacity>
+          </View>
+        </View>
+      )}
+      {prompt && (
+        <SetSchedule
+          modalVisible={modalVisible}
+          setModalVisible={setModalVisible}
+        />
+      )}
+    </>
   )
 }
 
@@ -46,5 +72,12 @@ const styles = StyleSheet.create({
   bottomElementText: {
     fontSize: 15,
     lineHeight: 20,
+    color: colors.primary,
+  },
+  button: {
+    borderColor: colors.primary,
+    borderRadius: 4,
+    borderWidth: 1,
+    padding: 8,
   },
 })

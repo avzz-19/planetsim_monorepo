@@ -75,7 +75,7 @@ function DesktopView(props) {
               ))}
             </View>
             <View style={{ marginTop: 68, marginLeft: '-25%' }}>
-              <BottomBar />
+              <BottomBar tankerButton />
             </View>
           </>
         )}
@@ -114,7 +114,7 @@ function DesktopView(props) {
             </View>
             <TowerCard />
             <View style={{ marginTop: 68, marginLeft: '-25%' }}>
-              <BottomBar />
+              <BottomBar tankerButton />
             </View>
           </View>
         )}
