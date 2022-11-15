@@ -8,6 +8,7 @@ import {
   View,
 } from 'react-native'
 import React, { useState } from 'react'
+import { useNavigation } from '@react-navigation/native'
 import RecordTankerArrival from '../../components/tanker/RecordTankerArrival'
 import { Body, colors } from '../../../utils/screenLayout'
 import AddNewAgencyButton from '../../components/agencycards/AddNewAgencyButton'
@@ -21,6 +22,7 @@ import AgencyPlaceholder from '../../assets/AgencyPlaceholder.png'
 function MobileView() {
   const states = ['Tanker Logs', 'Agency Details']
   const [active, setActive] = useState('Tanker Logs')
+  const navigation = useNavigation()
   return (
     <View>
       <View style={[styles.tabContainer, { alignSelf: 'center' }]}>
@@ -44,7 +46,7 @@ function MobileView() {
           <Body styleProps={{ marginBottom: Platform.OS === 'web' ? 0 : 250 }}>
             <View style={[styles.row, styles.top]}>
               <Text style={styles.heading}>Today&apos;s tanker entry</Text>
-              <TouchableOpacity>
+              <TouchableOpacity onPress={() => navigation.navigate('History')}>
                 <Text style={styles.old}>View old entries</Text>
               </TouchableOpacity>
             </View>

@@ -7,6 +7,7 @@ import {
   View,
 } from 'react-native'
 import React, { useState } from 'react'
+import { useNavigation } from '@react-navigation/native'
 import RecordTankerArrival from '../../components/tanker/RecordTankerArrival'
 import { Body, colors } from '../../../utils/screenLayout'
 import DesktopSideBar from '../../components/desktopOnly/DesktopSideBar'
@@ -20,6 +21,7 @@ import AgencyPlaceholder from '../../assets/AgencyPlaceholder.png'
 function DesktopView(props) {
   const states = ['Tanker Logs', 'Agency Details']
   const [active, setActive] = useState('Tanker Logs')
+  const navigation = useNavigation()
   return (
     <View>
       <DesktopSideBar {...props} />
@@ -53,7 +55,7 @@ function DesktopView(props) {
           <View style={{ width: '91.5%', alignSelf: 'center' }}>
             <View style={[styles.row, styles.top]}>
               <Text style={styles.heading}>Today&apos;s tanker entry</Text>
-              <TouchableOpacity>
+              <TouchableOpacity onPress={() => navigation.navigate('History')}>
                 <Text style={styles.old}>View old entries</Text>
               </TouchableOpacity>
             </View>

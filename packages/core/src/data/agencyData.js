@@ -30,10 +30,10 @@ export const agencyData = [
       'No 54, 2 nd main 5th block, Electronics City Banglore 560053. 6kms ',
     Phone1: '9845012345',
   },
-  {
-    name: 'Apple water services',
-    address:
-      'No 54, 2 nd main 5th block, Electronics City Banglore 560053. 6kms ',
-    Phone1: '9845012345',
-  },
+  // {
+  //   name: 'Apple water services',
+  //   address:
+  //     'No 54, 2 nd main 5th block, Electronics City Banglore 560053. 6kms ',
+  //   Phone1: '9845012345',
+  // },
 ]

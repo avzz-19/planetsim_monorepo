@@ -7,6 +7,7 @@ import Water from '../screens/water'
 import OptionButton from '../components/common/OptionButton'
 import Schedule from '../screens/schedule'
 import AddButton from '../components/common/AddButton'
+import TankerHistory from '../screens/tankerHistory'
 
 function Rootnavigation() {
   const [activeTab, setActiveTab] = useState('')
@@ -69,6 +70,23 @@ function Rootnavigation() {
       >
         {(screenProps) => (
           <Tanker
+            screenProps={{ ...screenProps }}
+            activeTab={activeTab}
+            setActiveTab={setActiveTab}
+          />
+        )}
+      </Stack.Screen>
+      <Stack.Screen
+        name='History'
+        options={{
+          title: 'Tanker History',
+          headerBackTitleVisible: false,
+          headerTitleAlign: 'center',
+          headerRight: () => <OptionButton />,
+        }}
+      >
+        {(screenProps) => (
+          <TankerHistory
             screenProps={{ ...screenProps }}
             activeTab={activeTab}
             setActiveTab={setActiveTab}
