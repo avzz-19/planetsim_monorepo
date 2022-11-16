@@ -19,7 +19,7 @@ function SetWaterLevels() {
         backgroundColor: 'white',
       }}
     >
-      <Text style={{ marginBottom: 10, fontWeight: '500' }}>
+      <Text style={{ marginBottom: 10, fontWeight: '500', color: 'black' }}>
         Set water levels
       </Text>
       <View style={{ flexDirection: 'row' }}>
@@ -57,7 +57,7 @@ function SetWaterLevels() {
             ballIndicatorPosition={-48}
             showBackgroundShadow={false}
           />
-          <Text style={{ marginTop: 10 }}>Switch on</Text>
+          <Text style={{ marginTop: 10, color: 'black' }}>Switch on</Text>
         </View>
         <View
           style={{
@@ -95,7 +95,7 @@ function SetWaterLevels() {
             ballIndicatorPosition={-48}
             showBackgroundShadow={false}
           />
-          <Text style={{ marginTop: 10 }}>Switch off</Text>
+          <Text style={{ marginTop: 10, color: 'black' }}>Switch off</Text>
         </View>
       </View>
     </View>

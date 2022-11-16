@@ -33,7 +33,7 @@ function ScheduleCard({
         <Text style={styles.col2}>{type}</Text>
       </View>
       <View style={styles.switch}>
-        <Text style={{ marginRight: 5, fontWeight: '500' }}>
+        <Text style={{ marginRight: 5, fontWeight: '500', color: 'black' }}>
           {isEnabled ? 'Enabled' : 'Disabled'}
         </Text>
         <ToggleSwitch

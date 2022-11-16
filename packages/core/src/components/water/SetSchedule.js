@@ -8,7 +8,10 @@ import {
   Image,
   Platform,
 } from 'react-native'
+import { Button } from 'react-native-paper'
+import { colors } from '../../../utils/screenLayout'
 import Close from '../../assets/Close.png'
+// import SetDate from './SetDate'
 // import SetWaterLevels from './SetWaterLevels'
 
 function SetSchedule({ modalVisible, setModalVisible }) {
@@ -33,7 +36,24 @@ function SetSchedule({ modalVisible, setModalVisible }) {
               </Pressable>
               <Text style={styles.modalText}>Set Schedule for water</Text>
             </View>
+            {/* <SetDate /> */}
             {/* <SetWaterLevels /> */}
+            <View style={{ flex: 1, justifyContent: 'flex-end' }}>
+              <Button
+                mode='contained'
+                buttonColor={colors.primary}
+                style={{
+                  width: Platform.OS === 'web' ? '90vw' : 200,
+                  marginVertical: 10,
+                  alignSelf: 'center',
+                  borderRadius: 8,
+                  marginBottom: 20,
+                }}
+                onPress={() => setModalVisible(!modalVisible)}
+              >
+                Save
+              </Button>
+            </View>
           </View>
         </View>
       </Modal>

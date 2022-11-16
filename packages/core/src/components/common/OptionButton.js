@@ -59,6 +59,7 @@ function OptionButton() {
       <TouchableOpacity
         style={{ marginRight: 20, marginTop: Platform.OS === 'web' ? 23 : 15 }}
         onPress={visible ? hideModal : showModal}
+        hitSlop={{ top: 20, bottom: 20, left: 50, right: 50 }}
       >
         <Image source={Options} style={{ width: 4, height: 18 }} />
       </TouchableOpacity>
