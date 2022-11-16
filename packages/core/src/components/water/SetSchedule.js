@@ -63,9 +63,6 @@ const styles = StyleSheet.create({
     padding: 10,
     elevation: 2,
   },
-  buttonOpen: {
-    backgroundColor: 'red',
-  },
   top: {
     position: 'absolute',
     top: 20,
@@ -84,5 +81,6 @@ const styles = StyleSheet.create({
     fontSize: 22,
     paddingLeft: '13%',
     width: Platform.OS === 'web' ? '100vw' : '100%',
+    color: 'black',
   },
 })

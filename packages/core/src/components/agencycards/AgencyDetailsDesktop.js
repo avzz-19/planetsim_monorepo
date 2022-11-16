@@ -42,11 +42,13 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: '600',
     paddingBottom: 6,
+    color: 'black',
   },
   body: {
     fontSize: 14,
     fontWeight: '400',
     paddingBottom: 6,
+    color: 'black',
   },
   phone: {
     marginRight: 40,

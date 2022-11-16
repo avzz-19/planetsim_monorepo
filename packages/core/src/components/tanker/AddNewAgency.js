@@ -77,5 +77,6 @@ const styles = StyleSheet.create({
     fontSize: 22,
     paddingLeft: '13%',
     width: Platform.OS === 'web' ? '100vw' : '100%',
+    color: 'black',
   },
 })

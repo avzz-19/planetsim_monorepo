@@ -77,7 +77,7 @@ function UgtCard({
         )}
         {mode === 'Manual' && (
           <View style={styles.row}>
-            <Text>Valve </Text>
+            <Text style={{ color: 'black' }}>Valve </Text>
             <ToggleSwitch
               value={isEnabled}
               buttonWidth={55}

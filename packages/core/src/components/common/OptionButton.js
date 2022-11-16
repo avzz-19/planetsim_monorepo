@@ -84,5 +84,6 @@ const styles = StyleSheet.create({
   item: {
     paddingVertical: 10,
     alignSelf: 'center',
+    color: 'black',
   },
 })

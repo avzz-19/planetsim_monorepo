@@ -26,8 +26,8 @@ function MobileView() {
     <Body>
       <View style={[styles.row, styles.container]}>
         <View style={styles.row}>
-          <Text>Mode: </Text>
-          <Text>{Mode[mode]}</Text>
+          <Text style={{ color: 'black' }}>Mode: </Text>
+          <Text style={{ color: 'black' }}>{Mode[mode]}</Text>
         </View>
         <View>
           <TouchableOpacity
@@ -139,6 +139,7 @@ const styles = StyleSheet.create({
   tabs: {
     paddingHorizontal: 37,
     paddingVertical: 7,
+    color: 'black',
   },
   tabContainer: {
     borderRadius: 4,
@@ -162,5 +163,6 @@ const styles = StyleSheet.create({
     marginBottom: 20,
     fontWeight: '600',
     fontSize: 18,
+    color: 'black',
   },
 })

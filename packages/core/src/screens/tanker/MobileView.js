@@ -75,7 +75,7 @@ function MobileView() {
                   source={Placeholder}
                   style={{ height: 256, width: 253 }}
                 />
-                <Text style={{ margin: 20, fontSize: 24 }}>
+                <Text style={{ margin: 20, fontSize: 24, color: 'black' }}>
                   No entries today
                 </Text>
                 <View style={{ width: '90%', alignSelf: 'center' }}>
@@ -144,6 +144,7 @@ const styles = StyleSheet.create({
   tabs: {
     paddingHorizontal: 37,
     paddingVertical: 7,
+    color: 'black',
   },
   tabContainer: {
     borderRadius: 4,
@@ -183,5 +184,6 @@ const styles = StyleSheet.create({
   heading: {
     fontWeight: '500',
     fontSize: 20,
+    color: 'black',
   },
 })

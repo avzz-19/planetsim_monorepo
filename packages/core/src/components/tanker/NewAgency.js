@@ -126,6 +126,7 @@ const styles = StyleSheet.create({
     padding: 10,
     borderRadius: 4,
     width: '100%',
+    color: 'black',
   },
   wrapper: {
     marginTop: 80,
@@ -135,5 +136,6 @@ const styles = StyleSheet.create({
   },
   label: {
     alignSelf: 'flex-start',
+    color: 'black',
   },
 })

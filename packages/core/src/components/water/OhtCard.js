@@ -75,13 +75,11 @@ function OhtCard({
         <View style={styles.image}>
           <Image
             source={Sensor}
-            style={{ height: 17, width: 24, marginRight: 10 }}
+            style={{ height: 17, width: 24 }}
             resizeMode='contain'
           />
         </View>
-        <View
-          style={[styles.row, styles.end, { justifyContent: 'space-between' }]}
-        >
+        <View style={[styles.row, styles.end]}>
           <Text style={styles.percentCheck(percentage)}>
             {PercentageCheck(percentage)}
           </Text>
@@ -90,7 +88,7 @@ function OhtCard({
           )}
           {mode === 'Manual' && (
             <View style={[styles.row, styles.manual]}>
-              <Text>Valve </Text>
+              <Text style={{ color: 'black' }}>Valve </Text>
               <ToggleSwitch
                 value={isEnabled}
                 buttonWidth={55}
@@ -130,8 +128,8 @@ const styles = StyleSheet.create({
   }),
   wrapper: {
     width: '30%',
-    marginLeft: 10,
-    marginRight: 10,
+    marginLeft: 5,
+    marginRight: 5,
     height: 86,
     borderRadius: 10,
     justifyContent: 'center',
@@ -140,6 +138,7 @@ const styles = StyleSheet.create({
   percentCheck: (percentage) => ({
     fontSize: 14,
     color: percentage <= 25 ? colors.red : colors.black,
+    flex: 2,
   }),
   leftSection: (waterType, percentage) => ({
     width: '100%',
@@ -164,7 +163,8 @@ const styles = StyleSheet.create({
   image: {
     position: 'absolute',
     top: 5,
-    right: -50,
+    alignSelf: 'flex-end',
+    right: '-27%',
   },
   v1: {
     paddingLeft: 5,
@@ -175,6 +175,7 @@ const styles = StyleSheet.create({
   },
   containerText: {
     paddingLeft: 10,
+    color: 'black',
   },
   row: {
     flexDirection: 'row',
@@ -197,8 +198,7 @@ const styles = StyleSheet.create({
     color: colors.navy,
   },
   manual: {
-    position: 'absolute',
-    right: -40,
+    flex: 0.9,
   },
   end: {
     position: 'absolute',

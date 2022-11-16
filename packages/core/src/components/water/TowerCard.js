@@ -55,7 +55,7 @@ function TowerCard() {
               )}
             </View>
             <View style={styles.title}>
-              <Text style={{ fontSize: 20 }}>{i.name}</Text>
+              <Text style={{ fontSize: 20, color: 'black' }}>{i.name}</Text>
             </View>
           </View>
         </View>

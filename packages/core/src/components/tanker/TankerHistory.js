@@ -71,12 +71,12 @@ function TankerHistories({
             source={status === 'Filling now' ? Filling : Tick}
             style={styles.img}
           />
-          <Text>{status}</Text>
+          <Text style={styles.black}>{status}</Text>
         </View>
         <View style={styles.time}>
-          <Text>{start}</Text>
-          <Text> - {end}</Text>
-          <Text>{date}</Text>
+          <Text style={styles.black}>{start}</Text>
+          <Text style={styles.black}> - {end}</Text>
+          <Text style={styles.black}>{date}</Text>
         </View>
       </View>
     </View>
@@ -97,6 +97,7 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 18,
     fontWeight: '600',
+    color: 'black',
   },
   row: {
     flexDirection: 'row',
@@ -110,6 +111,7 @@ const styles = StyleSheet.create({
   },
   col2: {
     flex: 0.6,
+    color: 'black',
   },
   img: {
     height: 22,
@@ -122,5 +124,8 @@ const styles = StyleSheet.create({
     padding: 8,
     borderRadius: 12,
     width: 200,
+  },
+  black: {
+    color: 'black',
   },
 })

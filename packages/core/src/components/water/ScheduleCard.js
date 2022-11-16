@@ -18,7 +18,14 @@ function ScheduleCard({
   const [isEnabled, setIsEnabled] = React.useState(false)
   return (
     <View style={styles.container}>
-      <Text style={{ fontWeight: '500', fontSize: 18, marginBottom: 10 }}>
+      <Text
+        style={{
+          fontWeight: '500',
+          fontSize: 18,
+          marginBottom: 10,
+          color: 'black',
+        }}
+      >
         {title}
       </Text>
       <View style={styles.row}>
@@ -64,8 +71,12 @@ function ScheduleCard({
           source={Calendar}
           style={{ height: 12, width: 12, marginRight: 5 }}
         />
-        <Text>{startDate} - </Text>
-        {endDate ? <Text>{endDate}</Text> : <Text>No End Date</Text>}
+        <Text style={styles.black}>{startDate} - </Text>
+        {endDate ? (
+          <Text style={styles.black}>{endDate}</Text>
+        ) : (
+          <Text style={styles.black}>No End Date</Text>
+        )}
       </View>
       <View style={styles.options}>
         <TouchableOpacity>
@@ -116,5 +127,8 @@ const styles = StyleSheet.create({
     position: 'absolute',
     bottom: 10,
     right: 10,
+  },
+  black: {
+    color: 'black',
   },
 })

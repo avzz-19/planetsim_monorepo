@@ -14,7 +14,7 @@ function ColorCoding() {
             marginRight: 5,
           }}
         />
-        <Text>Drinking</Text>
+        <Text style={{ color: 'black' }}>Drinking</Text>
       </View>
       <View style={[styles.row, styles.next]}>
         <View
@@ -25,7 +25,7 @@ function ColorCoding() {
             marginRight: 5,
           }}
         />
-        <Text>Borewell</Text>
+        <Text style={{ color: 'black' }}>Borewell</Text>
       </View>
       <View style={[styles.row, styles.next]}>
         <View
@@ -36,7 +36,7 @@ function ColorCoding() {
             marginRight: 5,
           }}
         />
-        <Text>Recycled</Text>
+        <Text style={{ color: 'black' }}>Recycled</Text>
       </View>
       <View style={[styles.row, styles.next]}>
         <View
@@ -47,7 +47,7 @@ function ColorCoding() {
             marginRight: 5,
           }}
         />
-        <Text>Soft treated</Text>
+        <Text style={{ color: 'black' }}>Soft treated</Text>
       </View>
     </View>
   )
