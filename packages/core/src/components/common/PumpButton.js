@@ -2,7 +2,7 @@ import { View } from 'react-native'
 import React from 'react'
 import { Button } from 'react-native-paper'
 
-function PumpButton({ isEnabled = true, handleClick }) {
+function PumpButton({ isEnabled = true, handleClick, label }) {
   return (
     <View style={{ alignSelf: 'center' }}>
       <Button
@@ -12,7 +12,7 @@ function PumpButton({ isEnabled = true, handleClick }) {
         onPress={handleClick}
         style={{ width: 190 }}
       >
-        {`${isEnabled ? 'Stop' : 'Start'} pump`}
+        {`${isEnabled ? 'Stop' : 'Start'} ${label}`}
       </Button>
     </View>
   )

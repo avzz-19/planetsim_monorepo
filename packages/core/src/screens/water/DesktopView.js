@@ -102,6 +102,7 @@ function DesktopView(props) {
                 handleClick={() => {
                   setIsEnabled(!isEnabled)
                 }}
+                label='pump'
               />
             </View>
           </>

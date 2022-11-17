@@ -11,7 +11,7 @@ import {
 import { Button } from 'react-native-paper'
 import { colors } from '../../../utils/screenLayout'
 import Close from '../../assets/Close.png'
-// import SetDate from './SetDate'
+import SetDate from './SetDate'
 // import SetWaterLevels from './SetWaterLevels'
 
 function SetSchedule({ modalVisible, setModalVisible }) {
@@ -36,7 +36,7 @@ function SetSchedule({ modalVisible, setModalVisible }) {
               </Pressable>
               <Text style={styles.modalText}>Set Schedule for water</Text>
             </View>
-            {/* <SetDate /> */}
+            <SetDate />
             {/* <SetWaterLevels /> */}
             <View style={{ flex: 1, justifyContent: 'flex-end' }}>
               <Button

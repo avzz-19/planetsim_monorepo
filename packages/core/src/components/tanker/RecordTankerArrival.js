@@ -13,10 +13,13 @@ import Tanker from '../../assets/TankerWhite.png'
 import Agency from '../../assets/Agency.png'
 import Plus from '../../assets/Plus.png'
 import AddNewAgency from './AddNewAgency'
+import TankerDetails from './TankerDetails'
 
 function RecordTankerArrival({ AddAgency, RecordTanker }) {
   const [modalVisible, setModalVisible] = useState(false)
   const [prompt, setPrompt] = useState(false)
+  const [tankerModalVisible, setTankerModalVisible] = useState(false)
+  const [tankerPrompt, setTankerPrompt] = useState(false)
   return (
     <>
       <Surface style={styles.container}>
@@ -59,7 +62,12 @@ function RecordTankerArrival({ AddAgency, RecordTanker }) {
           </TouchableOpacity>
         )}
         {RecordTanker && (
-          <TouchableOpacity onPress={() => {}}>
+          <TouchableOpacity
+            onPress={() => {
+              setTankerPrompt(true)
+              setTankerModalVisible(true)
+            }}
+          >
             <Image source={Plus} style={{ height: 32, width: 32 }} />
           </TouchableOpacity>
         )}
@@ -68,6 +76,12 @@ function RecordTankerArrival({ AddAgency, RecordTanker }) {
         <AddNewAgency
           modalVisible={modalVisible}
           setModalVisible={setModalVisible}
+        />
+      )}
+      {tankerPrompt && (
+        <TankerDetails
+          tankerModalVisible={tankerModalVisible}
+          setTankerModalVisible={setTankerModalVisible}
         />
       )}
     </>

@@ -100,6 +100,7 @@ function MobileView() {
               handleClick={() => {
                 setIsEnabled(!isEnabled)
               }}
+              label='pump'
             />
           </View>
         </>
