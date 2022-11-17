@@ -12,7 +12,7 @@ import { Breakpoints, colors } from '../../../utils/screenLayout'
 import Tanker from '../../assets/TankerWhite.png'
 import Agency from '../../assets/Agency.png'
 import Plus from '../../assets/Plus.png'
-import AddNewAgency from './AddNewAgency'
+import AddNewAgency from './AgencyModal'
 import TankerDetails from './TankerDetails'
 
 function RecordTankerArrival({ AddAgency, RecordTanker }) {

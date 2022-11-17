@@ -8,13 +8,13 @@ import {
 } from 'react-native'
 import React, { useState } from 'react'
 import { useNavigation } from '@react-navigation/native'
-import RecordTankerArrival from '../../components/tanker/RecordTankerArrival'
+import RecordTankerArrival from '../../components/tanker/RecordTankerButton'
 import { Body, colors } from '../../../utils/screenLayout'
 import DesktopSideBar from '../../components/desktopOnly/DesktopSideBar'
 import AgencyDetailsDesktop from '../../components/agencycards/AgencyDetailsDesktop'
 import { agencyData } from '../../data/agencyData'
 import { tankerEntries } from '../../data/tankerEntries'
-import TankerLog from '../../components/tanker/TankerLogDesktop'
+import TankerLog from '../../components/desktopOnly/TankerLogDesktop'
 import Placeholder from '../../assets/Placeholder.png'
 import AgencyPlaceholder from '../../assets/AgencyPlaceholder.png'
 
@@ -26,17 +26,7 @@ function DesktopView(props) {
     <View>
       <DesktopSideBar {...props} />
       <View style={{ marginLeft: '20%' }}>
-        <View
-          style={[
-            styles.tabContainer,
-            {
-              alignSelf: 'flex-start',
-              paddingLeft: '5%',
-              backgroundColor: '#FFF',
-              width: '100%',
-            },
-          ]}
-        >
+        <View style={[styles.tabContainer, styles.tab]}>
           <View style={[styles.row]}>
             {states.map((i) => (
               <Pressable
@@ -176,5 +166,11 @@ const styles = StyleSheet.create({
   heading: {
     fontWeight: '600',
     fontSize: 24,
+  },
+  tab: {
+    alignSelf: 'flex-start',
+    paddingLeft: '5%',
+    backgroundColor: '#FFF',
+    width: '100%',
   },
 })

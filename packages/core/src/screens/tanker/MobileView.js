@@ -9,7 +9,7 @@ import {
 } from 'react-native'
 import React, { useState } from 'react'
 import { useNavigation } from '@react-navigation/native'
-import RecordTankerArrival from '../../components/tanker/RecordTankerArrival'
+import RecordTankerArrival from '../../components/tanker/RecordTankerButton'
 import { Body, colors } from '../../../utils/screenLayout'
 import AddNewAgencyButton from '../../components/agencycards/AddNewAgencyButton'
 import AgencyDetails from '../../components/agencycards/AgencyDetails'

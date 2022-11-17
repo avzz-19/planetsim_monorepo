@@ -9,6 +9,7 @@ import {
   Platform,
   TextInput,
   TouchableOpacity,
+  ScrollView,
 } from 'react-native'
 import { colors } from '../../../utils/screenLayout'
 import Close from '../../assets/Close.png'
@@ -40,76 +41,79 @@ function TankerDetails({ tankerModalVisible, setTankerModalVisible }) {
       >
         <View style={styles.centeredView}>
           <View style={styles.modalView}>
-            <View style={styles.top}>
-              <Pressable
-                style={[styles.button, styles.buttonClose]}
-                onPress={() => setTankerModalVisible(!tankerModalVisible)}
-              >
-                <Image source={Close} style={{ height: 24, width: 24 }} />
-              </Pressable>
-              <Text style={styles.modalText}>Tanker Details</Text>
-            </View>
-            <Image source={TankerMan} style={styles.img} />
-            <View style={styles.main}>
-              <Text style={styles.black}>Agency Name:</Text>
-              <TextInput
-                style={styles.input}
-                onChangeText={onChangeText}
-                value={text}
-              />
-              <Text style={styles.black}>Water supplied (litres):</Text>
-              <View style={{ flexDirection: 'row' }}>
-                <View
-                  style={{
-                    flex: 1,
-                    flexDirection: 'row',
-                    flexWrap: 'wrap',
-                    justifyContent: 'center',
-                  }}
+            <ScrollView>
+              <View style={styles.top}>
+                <Pressable
+                  style={[styles.button, styles.buttonClose]}
+                  onPress={() => setTankerModalVisible(!tankerModalVisible)}
                 >
-                  {litres.map((i) => (
+                  <Image source={Close} style={{ height: 24, width: 24 }} />
+                </Pressable>
+                <Text style={styles.modalText}>Tanker Details</Text>
+              </View>
+
+              <Image source={TankerMan} style={styles.img} />
+              <View style={styles.main}>
+                <Text style={styles.black}>Agency Name:</Text>
+                <TextInput
+                  style={styles.input}
+                  onChangeText={onChangeText}
+                  value={text}
+                />
+                <Text style={styles.black}>Water supplied (litres):</Text>
+                <View style={{ flexDirection: 'row' }}>
+                  <View
+                    style={{
+                      flex: 1,
+                      flexDirection: 'row',
+                      flexWrap: 'wrap',
+                      justifyContent: 'center',
+                    }}
+                  >
+                    {litres.map((i) => (
+                      <TouchableOpacity
+                        style={active === i ? styles.activeLtr : styles.box}
+                        onPress={() => {
+                          setActive(i)
+                        }}
+                      >
+                        <Text style={styles.ltr}>{i}</Text>
+                      </TouchableOpacity>
+                    ))}
+                    {active === 'Other' && (
+                      <TextInput
+                        style={styles.input}
+                        onChangeText={onChangeOtherText}
+                        value={otherText}
+                        placeholder='Enter Liters'
+                      />
+                    )}
+                  </View>
+                </View>
+                <Text style={styles.black}>Underground tank:</Text>
+                <View style={{ justifyContent: 'center' }}>
+                  {tanks.map((i) => (
                     <TouchableOpacity
-                      style={active === i ? styles.activeLtr : styles.box}
+                      style={activeTank === i ? styles.activeTank : styles.tank}
                       onPress={() => {
-                        setActive(i)
+                        setActiveTank(i)
                       }}
                     >
                       <Text style={styles.ltr}>{i}</Text>
                     </TouchableOpacity>
                   ))}
-                  {active === 'Other' && (
-                    <TextInput
-                      style={styles.input}
-                      onChangeText={onChangeOtherText}
-                      value={otherText}
-                      placeholder='Enter Liters'
-                    />
-                  )}
                 </View>
               </View>
-              <Text style={styles.black}>Underground tank:</Text>
-              <View style={{ justifyContent: 'center' }}>
-                {tanks.map((i) => (
-                  <TouchableOpacity
-                    style={activeTank === i ? styles.activeTank : styles.tank}
-                    onPress={() => {
-                      setActiveTank(i)
-                    }}
-                  >
-                    <Text style={styles.ltr}>{i}</Text>
-                  </TouchableOpacity>
-                ))}
+              <View style={{ marginBottom: 20, marginTop: 10 }}>
+                <PumpButton
+                  isEnabled={isEnabled}
+                  handleClick={() => {
+                    setIsEnabled(!isEnabled)
+                  }}
+                  label='filling'
+                />
               </View>
-            </View>
-            <View style={{ marginBottom: 30 }}>
-              <PumpButton
-                isEnabled={isEnabled}
-                handleClick={() => {
-                  setIsEnabled(!isEnabled)
-                }}
-                label='filling'
-              />
-            </View>
+            </ScrollView>
           </View>
         </View>
       </Modal>
@@ -165,6 +169,7 @@ const styles = StyleSheet.create({
     width: 242,
     marginTop: 100,
     borderRadius: 4,
+    alignSelf: 'center',
   },
   main: { marginTop: 20, flex: 1, alignSelf: 'center', marginLeft: 10 },
   input: {

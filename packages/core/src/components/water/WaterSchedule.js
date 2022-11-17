@@ -12,7 +12,7 @@ import { Button } from 'react-native-paper'
 import { colors } from '../../../utils/screenLayout'
 import Close from '../../assets/Close.png'
 import SetDate from './SetDate'
-// import SetWaterLevels from './SetWaterLevels'
+// import SetWaterLevels from './WaterLevelSlider'
 
 function SetSchedule({ modalVisible, setModalVisible }) {
   return (
@@ -42,13 +42,7 @@ function SetSchedule({ modalVisible, setModalVisible }) {
               <Button
                 mode='contained'
                 buttonColor={colors.primary}
-                style={{
-                  width: Platform.OS === 'web' ? '90vw' : 200,
-                  marginVertical: 10,
-                  alignSelf: 'center',
-                  borderRadius: 8,
-                  marginBottom: 20,
-                }}
+                style={styles.save}
                 onPress={() => setModalVisible(!modalVisible)}
               >
                 Save
@@ -77,6 +71,13 @@ const styles = StyleSheet.create({
     elevation: 5,
     height: '102%',
     width: '100%',
+  },
+  save: {
+    width: Platform.OS === 'web' ? '90vw' : 200,
+    marginVertical: 10,
+    alignSelf: 'center',
+    borderRadius: 8,
+    marginBottom: 20,
   },
   button: {
     borderRadius: 20,

@@ -1,7 +1,7 @@
 import { View, TouchableOpacity, Image } from 'react-native'
 import React, { useState } from 'react'
 import Add from '../../assets/AddSchedule.png'
-import SetSchedule from '../water/SetSchedule'
+import SetSchedule from '../water/WaterSchedule'
 
 function AddButton() {
   const [modalVisible, setModalVisible] = useState(false)

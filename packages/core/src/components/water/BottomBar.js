@@ -2,7 +2,7 @@ import { StyleSheet, Text, View, TouchableOpacity, Image } from 'react-native'
 import React, { useState } from 'react'
 import Tanker from '../../assets/Taker.png'
 import { colors } from '../../../utils/screenLayout'
-import SetSchedule from './SetSchedule'
+import SetSchedule from './WaterSchedule'
 
 function BottomBar({ tankerButton, scheduleButton }) {
   const [modalVisible, setModalVisible] = useState(false)

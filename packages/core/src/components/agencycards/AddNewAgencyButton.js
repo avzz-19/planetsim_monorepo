@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import { Surface } from 'react-native-paper'
 import { colors } from '../../../utils/screenLayout'
 import Add from '../../assets/Add.png'
-import AddNewAgency from '../tanker/AddNewAgency'
+import AddNewAgency from '../tanker/AgencyModal'
 
 function AddNewAgencyButton() {
   const [modalVisible, setModalVisible] = useState(false)
