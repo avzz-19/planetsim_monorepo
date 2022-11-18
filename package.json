@@ -67,6 +67,7 @@
     "@react-navigation/native": "^6.0.13",
     "@react-navigation/native-stack": "^6.9.0",
     "@react-navigation/stack": "^6.3.3",
+    "@reduxjs/toolkit": "^1.9.0",
     "i18next": "^21.10.0",
     "install": "^0.13.0",
     "prop-types": "^15.8.1",
@@ -85,6 +86,8 @@
     "react-native-vector-icons": "^9.2.0",
     "react-native-vertical-slider-smartlife": "^1.0.9",
     "react-native-web": "^0.18.9",
+    "react-redux": "^8.0.5",
+    "redux": "^4.2.0",
     "rn-vertical-slider": "^2.0.2"
   }
 }

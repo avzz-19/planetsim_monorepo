@@ -9,6 +9,7 @@ import {
 import React from 'react'
 import { Button } from 'react-native-paper'
 // import CheckBox from '@react-native-community/checkbox'
+import { useDispatch } from 'react-redux'
 import { colors } from '../../../utils/screenLayout'
 
 function NewAgency() {
@@ -23,7 +24,16 @@ function NewAgency() {
   const [country, onChangeCountry] = React.useState('')
   //   const [checked, setChecked] = React.useState(false)
   //   const [checked2, setChecked2] = React.useState(false)
-
+  const dispatch = useDispatch()
+  const dispatchObj = {
+    name: text,
+    Phone1: number,
+    Phone2: number2,
+    address: `${address} ${address2} ${city} ${pin} ${state} ${country}`,
+  }
+  const handleAdd = () => {
+    dispatch({ type: 'ADD_AGENCY', payload: dispatchObj })
+  }
   return (
     <View style={styles.wrapper}>
       <ScrollView
@@ -54,6 +64,7 @@ function NewAgency() {
           onChangeText={onChangeNumber}
           value={number}
           keyboardType='numeric'
+          maxLength={10}
         />
         <Text style={styles.label}>Phone 2</Text>
         <TextInput
@@ -61,6 +72,7 @@ function NewAgency() {
           onChangeText={onChangeNumber2}
           value={number2}
           keyboardType='numeric'
+          maxLength={10}
         />
         <Text style={styles.label}>Address line 1*</Text>
         <TextInput
@@ -80,6 +92,7 @@ function NewAgency() {
           onChangeText={onChangePin}
           value={pin}
           keyboardType='numeric'
+          maxLength={6}
         />
         <Text style={styles.label}>City*</Text>
         <TextInput
@@ -102,6 +115,7 @@ function NewAgency() {
         <Button
           mode='contained'
           buttonColor={colors.primary}
+          onPress={handleAdd}
           style={{
             width: Platform.OS === 'web' ? '90vw' : 200,
             marginVertical: 10,

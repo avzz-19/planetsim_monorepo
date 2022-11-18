@@ -9,20 +9,21 @@ import {
 } from 'react-native'
 import React, { useState } from 'react'
 import { useNavigation } from '@react-navigation/native'
+import { useSelector } from 'react-redux'
 import RecordTankerArrival from '../../components/tanker/RecordTankerButton'
 import { Body, colors } from '../../../utils/screenLayout'
 import AddNewAgencyButton from '../../components/agencycards/AddNewAgencyButton'
-import AgencyDetails from '../../components/agencycards/AgencyDetails'
-import { agencyData } from '../../data/agencyData'
 import { tankerEntries } from '../../data/tankerEntries'
 import TankerLog from '../../components/tanker/TankerLog'
 import Placeholder from '../../assets/Placeholder.png'
 import AgencyPlaceholder from '../../assets/AgencyPlaceholder.png'
+import AgencyList from '../../components/tanker/AgencyList'
 
 function MobileView() {
   const states = ['Tanker Logs', 'Agency Details']
   const [active, setActive] = useState('Tanker Logs')
   const navigation = useNavigation()
+  const agency = useSelector((data) => data?.agency?.agencies)
   return (
     <View>
       <View style={[styles.tabContainer, { alignSelf: 'center' }]}>
@@ -93,15 +94,8 @@ function MobileView() {
           >
             List of Agencies
           </Text>
-          {agencyData.length !== 0 ? (
-            agencyData.map((e) => (
-              <AgencyDetails
-                title={e.name}
-                address={e.address}
-                phone1={e.Phone1}
-                phone2={e.Phone2}
-              />
-            ))
+          {agency.length !== 0 ? (
+            <AgencyList />
           ) : (
             <View style={{ alignItems: 'center' }}>
               <Image
@@ -117,7 +111,7 @@ function MobileView() {
               </View>
             </View>
           )}
-          {agencyData.length !== 0 && (
+          {agency.length !== 0 && (
             <View style={styles.buttonBg}>
               <View
                 style={{
